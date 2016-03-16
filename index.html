@@ -1,0 +1,195 @@
+<html>
+  <head>
+    <style type="text/css">
+      #main {
+        margin: 20px;
+        width: 1200px;
+        font-size: 4em;
+        font-family: "Impact"
+      }
+      .common {
+        margin-top: 20px;
+        margin-left: -18px;
+        position: relative;
+        display: inline-block;
+      }
+      .wrapD {
+        position: absolute;
+        top: 0;
+        left: 50px;
+      }
+      .wrapR {
+        position: absolute;
+        top: 20px;
+        left: 95px;
+      }
+      .wrapA {
+        position: absolute;
+        top: 60px;
+        left: 140px;
+      }
+      .wrapG {
+        position: absolute;
+        top: 55px;
+        left: 170px;
+      }
+      .wrapO {
+        position: absolute;
+        top: 63px;
+        left: 200px;
+      }
+      .wrapN {
+        position: absolute;
+        top: 63px;
+        left: 225px;
+      }
+      .wrapQ {
+        position: absolute;
+        top: 63px;
+        left: 245px;
+      }
+      .wrapU {
+        position: absolute;
+        top: 52px;
+        left: 290px;
+      }
+      .wrapE {
+        position: absolute;
+        top: 35px;
+        left: 330px;
+      }
+      .wrapS {
+        position: absolute;
+        top: 15px;
+        left: 365px;
+      }
+      .wrapT {
+        position: absolute;
+        top: 0px;
+        left: 415px;
+      }
+
+      #d, #d:before, #r, #r:before, #a, #a:before, 
+      #g, #g:before, #o, #o:before, #n, #n:before, 
+      #q, #q:before, #u, #u:before, #e, #e:before, #s, #s:before, #t, #t:before {
+        color: #AD6FBF;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      #d:before, #r:before, #a:before, #g:before, #o:before, 
+      #n:before, #q:before, #u:before, #e:before, #s:before, #t:before {
+        color: #492A56;
+        content: attr(title);
+        -webkit-mask-image:-webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1));
+      }
+
+      #d {
+        /*
+        margin-left: 20px;
+        margin-top: 20px;
+        */
+        font-size: 2em;
+        text-shadow: -1px 1px 0 #D2AE2C,-1px 1px 0 #D2AE2C, -2px 2px 0 #D2AE2C, -3px 3px 0 #D2AE2C, -4px 4px 0 #D2AE2C, -5px 5px 0 #D2AE2C, -6px 6px 0 #D2AE2C,-7px 7px 0 #D2AE2C,-8px 8px 0 #D2AE2C,-9px 9px 0 #D2AE2C,-10px 10px 0 #D2AE2C,-11px 11px 0 #D2AE2C,-12px 12px 0 #D2AE2C,-12px 12px 0 #D2AE2C,-12px 12px 0 #D2AE2C, -13px 13px 0 #D2AE2C,-14px 14px 0 #D2AE2C,-15px 15px 0 #D2AE2C;
+        /* transform: perspective(1000px); */
+        transform: rotate3d(180,300,1,65deg);
+        display: inline-block;
+        z-index: 100;
+        position: relative;
+      }
+      #r {
+        font-size: 1.6em;
+        text-shadow: -1px 1px 0 #F2DD3E,-1px 1px 0 #B89B29, -2px 2px 0 #D2AE2C, -3px 3px 0 #D2AE2C, -4px 4px 0 #D2AE2C, -5px 5px 0 #D2AE2C, -6px 6px 0 #D2AE2C,-7px 7px 0 #D2AE2C,-8px 8px 0 #D2AE2C,-9px 9px 0 #D2AE2C,-10px 10px 0 #DDB72F,-11px 11px 0 #DDB72F, -7px 7px 0 #1364B2;
+        /* transform: perspective(1000px); */
+        transform: rotate3d(180,200,1,60deg);
+        /*margin-left: -35px;*/
+        display: inline-block;
+        z-index: 99;
+      }
+      #a {
+        margin-top: 2px;
+        font-size: 1.2em;
+        text-shadow: -1px 1px 0 #B89B29,-1px 1px 0 #B89B29, -2px 2px 0 #B89B29 , -3px 3px 0 #B89B29, -4px 4px 0 #B89B29, -5px 5px 0 #B89B29, -6px 6px 0 #B89B29,-7px 7px 0 #B89B29,-8px 8px 0 #B89B29,-9px 9px 0 #B89B29,-10px 10px 0 #DDB72F,-11px 11px 0 #DDB72F, -7px 7px 0 #1364B2;
+        /* transform: perspective(1000px); */
+        transform: rotate3d(180,200,1,55deg);
+        display: inline-block;
+        z-index: 98;
+      }
+      #g {
+        font-size: 1.0em;
+        text-shadow: -1px 1px 0 #F2DD3E,-1px 1px 0 #B89B29, -2px 2px 0 #D2AE2C, -3px 3px 0 #D2AE2C, -4px 4px 0 #D2AE2C, -5px 5px 0 #D2AE2C, -6px 6px 0 #D2AE2C,-7px 7px 0 #D2AE2C,-8px 8px 0 #D2AE2C,-9px 9px 0 #D2AE2C,-10px 10px 0 #DDB72F,-11px 11px 0 #DDB72F, -7px 7px 0 #1364B2;
+        /* transform: perspective(1000px); */
+        transform: rotate3d(180,200,1,50deg);
+        display: inline-block;
+        z-index: 97;
+        position: relative;
+      }
+      #o {
+        font-size: 0.9em;
+        text-shadow: -1px 1px 0 #F2DD3E,-1px 1px 0 #B89B29, -2px 2px 0 #D2AE2C, -3px 3px 0 #D2AE2C, -4px 4px 0 #D2AE2C, -5px 5px 0 #D2AE2C, -6px 6px 0 #D2AE2C,-7px 7px 0 #D2AE2C;
+        /* transform: perspective(1000px); */
+        transform: rotate3d(180,200,1,40deg);
+        display: inline-block;
+        position: relative;
+        z-index: 96;
+      }
+      #n {
+        margin-left: -16px;
+        font-size: 0.9em;
+        text-shadow: -1px 1px 0 #F2DD3E,-1px 1px 0 #B89B29, -2px 2px 0 #D2AE2C, -3px 3px 0 #D2AE2C, -4px 4px 0 #D2AE2C, -5px 5px 0 #D2AE2C, -6px 6px 0 #D2AE2C;
+        /* transform: perspective(1000px); */
+        transform: rotate3d(180,200,1,30deg);
+        display: inline-block;
+      }
+      #q {
+        margin-left: -1px;
+        font-size: 0.9em;
+        text-shadow: 1px 1px 0 #F2DD3E, 1px 1px 0 #B89B29, 2px 2px 0 #D2AE2C, 3px 3px 0 #D2AE2C, 4px 4px 0 #D2AE2C, 5px 5px 0 #D2AE2C, 6px 6px 0 #D2AE2C;
+        transform: rotate3d(-300,200,1,-30deg);
+        display: inline-block;
+      }
+      #u {
+        margin-left: -16px;
+        font-size: 1.2em;
+        text-shadow: 1px 1px 0 #F2DD3E, 1px 1px 0 #B89B29, 2px 2px 0 #D2AE2C, 3px 3px 0 #D2AE2C, 4px 4px 0 #D2AE2C, 5px 5px 0 #D2AE2C, 6px 6px 0 #D2AE2C,7px 7px 0 #D2AE2C,8px 8px 0 #D2AE2C;
+        transform: rotate3d(-300,200,1,-45deg);
+        display: inline-block;
+      }
+      #e {
+        font-size: 1.5em;
+        text-shadow: 1px 1px 0 #F2DD3E, 1px 1px 0 #B89B29, 2px 2px 0 #D2AE2C, 3px 3px 0 #D2AE2C, 4px 4px 0 #D2AE2C, 5px 5px 0 #D2AE2C, 6px 6px 0 #D2AE2C,7px 7px 0 #D2AE2C,8px 8px 0 #D2AE2C,9px 9px 0 #D2AE2C,10px 10px 0 #DDB72F,11px 11px 0 #DDB72F;
+        transform: rotate3d(-300,200,1,-50deg);
+        display: inline-block;
+      }
+      #s {
+        font-size: 1.8em;
+        text-shadow: 1px 1px 0 #F2DD3E, 1px 1px 0 #B89B29, 2px 2px 0 #D2AE2C, 3px 3px 0 #D2AE2C, 4px 4px 0 #D2AE2C, 5px 5px 0 #D2AE2C, 6px 6px 0 #D2AE2C,7px 7px 0 #D2AE2C,8px 8px 0 #D2AE2C,9px 9px 0 #D2AE2C,10px 10px 0 #DDB72F,11px 11px 0 #DDB72F;
+        transform: rotate3d(-300,200,1,-55deg);
+        display: inline-block;
+      }
+      #t {
+        font-size: 2em;
+        text-shadow: 1px 1px 0 #F2DD3E, 1px 1px 0 #B89B29, 2px 2px 0 #D2AE2C, 3px 3px 0 #D2AE2C, 4px 4px 0 #D2AE2C, 5px 5px 0 #D2AE2C, 6px 6px 0 #D2AE2C,7px 7px 0 #D2AE2C,8px 8px 0 #D2AE2C,9px 9px 0 #D2AE2C,10px 10px 0 #DDB72F,11px 11px 0 #DDB72F;
+        transform: rotate3d(-300,200,1,-60deg);
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div class="wrapD"><span id="d" class="common" title="D">D</span></div>
+      <div class="wrapR"><span id="r" class="common" title="R">R</span></div>
+      <div class="wrapA"><span id="a" class="common" title="A">A</span></div>
+      <div class="wrapG"><span id="g" class="common" title="G">G</span></div>
+      <div class="wrapO"><span id="o" class="common" title="O">O</span></div>
+      <div class="wrapN"><span id="n" class="common" title="N">N</span></div>
+      <div class="wrapQ"><span id="q" class="common" title="Q">Q</span></div>
+      <div class="wrapU"><span id="u" class="common" title="U">U</span></div>
+      <div class="wrapE"><span id="e" class="common" title="E">E</span></div>
+      <div class="wrapS"><span id="s" class="common" title="S">S</span></div>
+      <div class="wrapT"><span id="t" class="common" title="T">T</span></div>
+      <div id="sword"><div id="line"></div></div>
+    </div>
+  </body>
+</html>

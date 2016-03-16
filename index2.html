@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    <script>
+      $(function() {
+      
+      $("#btn-execute").click(function() {
+
+        var special = $("#special").val()
+        var text = special;
+        /*
+        * 文字数を出す
+        * 左側部分を何文字目にするか出す
+        * 開始のfont-size、rotate3d、z-indexの指定をする
+        */
+        var center = Math.ceil(text.length / 2)
+        var fontSize = 2;
+        var rotate3dX = 180;
+        var rotate3dY = 300;
+        var rotate3dZ = 1;
+        var rotate3dAngle = 65;
+        var zIndex = 100;
+        var marginLeft = 0;
+
+        $(".dragonquest").text("")
+        for(var i=0; i<text.length; i++) {
+          var c = text.charAt(i);
+console.log(c);
+          $(".dragonquest").append("<span>"+ c + "</span>")
+          var span = $(".dragonquest span")
+          $(span[i]).css({
+            fontSize: fontSize + "em",
+            transform: "rotate3d(" + rotate3dX + "," + rotate3dY + "," + rotate3dZ + "," + rotate3dAngle + "deg)",
+            display: "inline-block",
+            position: "relative"
+          });
+          if(i+1 <= center) {
+            $(span[i]).css("textShadow", "-1px 1px 0 #F2DD3E,-1px 1px 0 #B89B29, -2px 2px 0 #D2AE2C, -3px 3px 0 #D2AE2C, -4px 4px 0 #D2AE2C, -5px 5px 0 #D2AE2C, -6px 6px 0 #D2AE2C,-7px 7px 0 #D2AE2C,-8px 8px 0 #D2AE2C,-9px 9px 0 #D2AE2C,-10px 10px 0 #DDB72F,-11px 11px 0 #DDB72F");
+            $(span[i]).css("marginLeft", marginLeft);
+            $(span[i]).css("zIndex", zIndex);
+            $(span[i]).css("transform", "rotate3d(" + rotate3dX + "," + rotate3dY + "," + rotate3dZ + "," + rotate3dAngle + "deg)");
+
+
+            rotate3dAngle = rotate3dAngle - 5;
+            if(rotate3dAngle < 0) {
+              rotate3dAngle = 0
+            }
+
+            var fontSizeSet = Math.floor(2 / center * 10) / 10
+            fontSize = fontSize - fontSizeSet;
+            if(fontSize < 1) {
+              fontSize = 1;
+            }
+            marginLeft = -25 + i*8;
+            if(marginLeft > -10) {
+              marginLeft = -10;
+            }
+            zIndex = zIndex - 1;
+
+            if(i+1 == center) {
+              /* $(span[i]).css("marginRight", "20px"); */
+              rotate3dAngle = rotate3dAngle - rotate3dAngle*2;
+              marginLeft = 0;
+            }
+
+          }else{
+            var rotate3dX = -300;
+            var rotate3dY = 200;
+            var rotate3dZ = 1;
+            $(span[i]).css("textShadow", "1px 1px 0 #F2DD3E,1px 1px 0 #B89B29, 2px 2px 0 #D2AE2C, 3px 3px 0 #D2AE2C, 4px 4px 0 #D2AE2C, 5px 5px 0 #D2AE2C, 6px 6px 0 #D2AE2C,7px 7px 0 #D2AE2C,8px 8px 0 #D2AE2C,9px 9px 0 #D2AE2C,-0px 10px 0 #DDB72F,11px 11px 0 #DDB72F");
+            $(span[i]).css("marginLeft", marginLeft);
+            $(span[i]).css("zIndex", zIndex);
+            $(span[i]).css("transform", "rotate3d(" + rotate3dX + "," + rotate3dY + "," + rotate3dZ + "," + rotate3dAngle + "deg)");
+
+            rotate3dAngle = rotate3dAngle - 5;
+            if(rotate3dAngle < -65) {
+              /*rotate3dAngle = -65;*/
+            }
+            var num = text.length - center;
+            var fontSizeSet = Math.floor(2 / num * 10) / 10;
+            fontSize = fontSize + fontSizeSet
+            marginLeft = -25 + i*2;
+            if(marginLeft < -35) {
+              /*marginLeft = -35;*/
+            }
+            zIndex = zIndex + 1;
+          }
+
+        }
+
+      });
+
+      });
+    </script>
+  </head>
+  <body>
+    <div style="margin-top: 20px; font-size: 4em; font-family: 'Impact'">
+      <input type="text" id="special" name="special" value="GUNDAMF91">
+      <input id="btn-execute" type="button" onclick="" value="実行">
+      <div class="dragonquest"></div>
+    </div>
+  </body>
+</html>
